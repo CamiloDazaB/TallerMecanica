@@ -1,0 +1,81 @@
+<mat-sidenav-container class="sidenav-container">
+
+    <mat-sidenav #drawer class="sidenav" fixedInViewport [attr.role]="(isweb$ | async) ? 'dialog' : 'navigation'"
+  
+      [mode]="(isweb$ | async) ? 'over' : 'side'" [opened]="(isweb$ | async) === false">
+  
+      <mat-toolbar>Menu</mat-toolbar>
+  
+      <mat-nav-list>
+  
+        <a mat-list-item href="/clientes"><mat-icon aria-hidden="true" aria-label="example home icon" fontIcon="add_circle"
+  
+            color="primary">clientes</mat-icon>clientes</a>
+  
+      <a mat-list-item href="/mecanicos"><mat-icon aria-hidden="true" aria-label="example home icon" fontIcon="key"
+  
+            color="primary">mecanicos</mat-icon>mecanicos</a>
+  
+         <a mat-list-item href="/vehiculos"><mat-icon aria-hidden="true" aria-label="example home icon"
+  
+            fontIcon="block" color="primary">vehiculos</mat-icon>vehiculos</a>
+  
+          <!--   <a mat-list-item href="/Empresa"><mat-icon aria-hidden="true" aria-label="example home icon"
+  
+              fontIcon="apartment" color="primary">Empresa</mat-icon>Empresa</a>
+  
+              <a mat-list-item href="/Equipo"><mat-icon aria-hidden="true" aria-label="example home icon"
+  
+                fontIcon="computer" color="primary">Equipo</mat-icon>Equipo</a> -->
+  
+       </mat-nav-list>
+  
+     </mat-sidenav>
+  
+    <mat-sidenav-content>
+  
+      <mat-toolbar color="primary">
+  
+        <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()"
+  
+          *ngIf="isweb$ | async">
+  
+          <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+  
+        </button>
+  
+   
+  
+          <span>Taller Mecanica</span>
+  
+          <!-- <div class="avatar-container">
+  
+            <ngx-avatars name="Julian Rodriguez"></ngx-avatars>
+  
+            <ngx-avatars name="Nelson Ramirez"></ngx-avatars>
+  
+          </div>  -->
+  
+   
+  
+   
+  
+   
+  
+       
+  
+      </mat-toolbar>
+  
+      <div class="container">
+  
+   
+  
+      </div>
+  
+      <router-outlet></router-outlet>
+  
+   
+  
+    </mat-sidenav-content>
+  
+  </mat-sidenav-container>
